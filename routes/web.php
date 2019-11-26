@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/contact-us', function() {
-    return view('pages.contact-us');
-});
+// Route::get('/contact-us', function() {
+//     return view('pages.contact-us');
+// });
+//requesting the contact us page from the ContactUsController
+Route::get('/contact-us', 'ContactUsController@create');
+Route::post('/contact-us', 'ContactUsController@store');
