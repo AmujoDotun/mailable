@@ -21,6 +21,8 @@ class ContactUsController extends Controller
         ]);
         // dd(request()->all());
 
-        Mail::to('test@test.com')->send(new ContactFormMail());
+        Mail::to('test@test.com')->send(new ContactFormMail($data));
+
+        return redirect('contact-us');
     }
 }
